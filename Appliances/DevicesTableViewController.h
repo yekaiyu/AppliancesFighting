@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  DevicesTableViewController.h
 //  Appliances
 //
 //  Created by yekaiyu on 14-10-20.
@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppliancesViewController : UITabBarController
-
+@interface DevicesTableViewController : UITableViewController
 
 
 @end
-
