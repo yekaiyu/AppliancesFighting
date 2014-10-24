@@ -1,0 +1,72 @@
+
+/* Class = "IBUILabel"; text = "And so on.."; ObjectID = "30M-Pg-8tP"; */
+"30M-Pg-8tP.text" = "等等...";
+
+/* Class = "IBUITextField"; placeholder = "Name"; ObjectID = "6zR-7F-gya"; */
+"6zR-7F-gya.placeholder" = "名字";
+
+/* Class = "IBUINavigationItem"; title = "Add Light Item"; ObjectID = "7pa-rA-MRC"; */
+"7pa-rA-MRC.title" = "增加一个灯";
+
+/* Class = "IBUILabel"; text = "Location:"; ObjectID = "7vs-Ku-YKy"; */
+"7vs-Ku-YKy.text" = "位置:";
+
+/* Class = "IBUILabel"; text = "Description:"; ObjectID = "B7y-ZV-hHU"; */
+"B7y-ZV-hHU.text" = "描述:";
+
+/* Class = "IBUILabel"; text = "Page2"; ObjectID = "IJg-iV-yZH"; */
+"IJg-iV-yZH.text" = "页面2";
+
+/* Class = "IBUILabel"; text = "And so on.."; ObjectID = "NDR-nb-tC3"; */
+"NDR-nb-tC3.text" = "等等...";
+
+/* Class = "IBUIButton"; normalTitle = "Change"; ObjectID = "NYw-ct-i1B"; */
+"NYw-ct-i1B.normalTitle" = "更改";
+
+/* Class = "IBUILabel"; text = "TV Controller"; ObjectID = "PhX-Z7-YIo"; */
+"PhX-Z7-YIo.text" = "电视控制器";
+
+/* Class = "IBUITabBarItem"; title = "Devices"; ObjectID = "R7q-zW-FKG"; */
+"R7q-zW-FKG.title" = "设备";
+
+/* Class = "IBUITabBarItem"; title = "Page2"; ObjectID = "SIi-oc-e5h"; */
+"SIi-oc-e5h.title" = "页面2";
+
+/* Class = "IBUITextField"; placeholder = "Simple description"; ObjectID = "U9L-4v-SjM"; */
+"U9L-4v-SjM.placeholder" = "简单的描述";
+
+/* Class = "IBUINavigationItem"; title = "TV"; ObjectID = "UQs-8f-YCB"; */
+"UQs-8f-YCB.title" = "电视";
+
+/* Class = "IBUITabBarController"; title = "Appliances Fighting"; ObjectID = "Vv8-bu-Nia"; */
+"Vv8-bu-Nia.title" = "家电大作战";
+
+/* Class = "IBUINavigationItem"; title = "Devices"; ObjectID = "aqx-lD-Uvh"; */
+"aqx-lD-Uvh.title" = "设备";
+
+/* Class = "IBUITextField"; placeholder = "Location"; ObjectID = "bWD-dP-v4A"; */
+"bWD-dP-v4A.placeholder" = "位置";
+
+/* Class = "IBUILabel"; text = "ItemName"; ObjectID = "bcq-pa-gDe"; */
+"bcq-pa-gDe.text" = "名字";
+
+/* Class = "IBUILabel"; text = "And so on.."; ObjectID = "ewc-yU-loX"; */
+"ewc-yU-loX.text" = "等等...";
+
+/* Class = "IBUINavigationItem"; title = "Light"; ObjectID = "mPj-NO-Ei5"; */
+"mPj-NO-Ei5.title" = "电灯";
+
+/* Class = "IBUILabel"; text = "Item Location"; ObjectID = "qOY-FJ-DDN"; */
+"qOY-FJ-DDN.text" = "位置:";
+
+/* Class = "IBUITabBarItem"; title = "Me"; ObjectID = "vEZ-SB-8TR"; */
+"vEZ-SB-8TR.title" = "我";
+
+/* Class = "IBUILabel"; text = "Name:"; ObjectID = "vgh-Fs-erb"; */
+"vgh-Fs-erb.text" = "名字:";
+
+/* Class = "IBUINavigationItem"; title = "Me"; ObjectID = "yBL-hM-aKa"; */
+"yBL-hM-aKa.title" = "我";
+
+/* Class = "IBUILabel"; text = "Light Switch"; ObjectID = "yPI-mo-x4O"; */
+"yPI-mo-x4O.text" = "电灯开关";

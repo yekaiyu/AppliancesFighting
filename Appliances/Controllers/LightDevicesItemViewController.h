@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddLightItemViewController.h"
 
-@interface LightDevicesItemViewController : UITableViewController
 
-@property (nonatomic,weak) IBOutlet UIBarButtonItem* lightAddButton;
+
+@interface LightDevicesItemViewController : UITableViewController <LightItemDetailViewControllerDelegate>
+
+
 
 @end

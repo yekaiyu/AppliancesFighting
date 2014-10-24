@@ -8,8 +8,17 @@
 
 #import "DevicesTableViewController.h"
 #import "DevicesTableViewCell.h"
+#import "AFJSONRequestOperation.h"
+#import "LightDevicesEntity.h"
+#import "LightDevicesItemViewController.h"
 
-@interface DevicesTableViewController ()
+static NSOperationQueue* queue = nil;
+
+@interface DevicesTableViewController (){
+    
+    NSMutableArray* lightItems;
+    
+}
 
 @end
 
@@ -17,14 +26,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,5 +42,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:nil];
     
 }
+
+
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LightDevicesItemViewController.h"
 
 @interface DevicesTableViewController : UITableViewController
 

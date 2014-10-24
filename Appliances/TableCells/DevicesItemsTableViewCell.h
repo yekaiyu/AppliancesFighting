@@ -14,6 +14,8 @@
 
 @property (nonatomic,weak) IBOutlet UILabel* itemLoation;
 
-@property (nonatomic,weak) IBOutlet UILabel* itemStatus;
+@property (nonatomic,weak) IBOutlet UISwitch* lightSwitch;
+
+@property (nonatomic,weak) IBOutlet UIImageView* imageView;
 
 @end
