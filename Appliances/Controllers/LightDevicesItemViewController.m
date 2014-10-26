@@ -205,16 +205,16 @@ static NSOperationQueue* queue = nil;
     isLoading = YES;
     
     NSURL* url = [self urlWithCategory:0];
-    NSURLRequest* request = [NSURLRequest requestWithURL:url];
+    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
     
     //basic authentication
-    NSString *authStr = [NSString stringWithFormat:@"%@:%@", @"dev", @"pass"];
+    NSString *authStr = [NSString stringWithFormat:@"%@:%@", @"jackding", @"pass"];
     NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64EncodedDataWithOptions:NSDataBase64Encoding64CharacterLineLength]];
-    NSLog(@"authValue:%@",authValue);
+    NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithCarriageReturn]];
     
-    [request valueForHTTPHeaderField:authValue];
+    [request setValue:authValue forHTTPHeaderField:@"Authorization"];
     
+ 
     AFJSONRequestOperation* operation = [AFJSONRequestOperation
                                          JSONRequestOperationWithRequest:request
                                          success:^(NSURLRequest* request,NSHTTPURLResponse* response,id JSON){
@@ -235,6 +235,7 @@ static NSOperationQueue* queue = nil;
 
     
     operation.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json",@"text/javascript",nil];
+
     
     queue = [[NSOperationQueue alloc] init];
     

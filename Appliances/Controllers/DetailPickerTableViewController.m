@@ -128,7 +128,7 @@ static NSOperationQueue* queue = nil;
     //basic authentication
     NSString *authStr = [NSString stringWithFormat:@"%@:%@", @"dev", @"pass"];
     NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64EncodedDataWithOptions:NSDataBase64Encoding64CharacterLineLength]];
+    NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithCarriageReturn]];
     //NSLog(@"authValue:%@",authValue);
     
     [request valueForHTTPHeaderField:authValue];
