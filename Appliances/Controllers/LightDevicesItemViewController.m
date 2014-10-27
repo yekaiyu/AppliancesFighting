@@ -25,6 +25,8 @@ static NSOperationQueue* queue = nil;
     BOOL isLoading;
     NSString* currentLanguage;
     NSString * DocumentsPath;
+    
+    MBProgressHUD *HUD;
 }
 
 - (void)viewDidLoad {
@@ -37,8 +39,8 @@ static NSOperationQueue* queue = nil;
     
     if(isLoading){
         
-        [self showSpinner];
-        
+        //[self showSpinner];
+        [self showHud];
     }
     
 }
@@ -221,7 +223,7 @@ static NSOperationQueue* queue = nil;
                                              
                                              [self parseDictionary:JSON];
                                              isLoading = NO;
-                                             [self hideSpinner];
+                                             [self hudWasHidden:HUD];
                                              [self.tableView reloadData];
                                              
                                          } failure:^(NSURLRequest* request,NSURLResponse* response,NSError* error,id JSON){
@@ -382,5 +384,35 @@ static NSOperationQueue* queue = nil;
     
 }
 
+- (void)showHud
+{
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    
+    // Set determinate mode
+    HUD.mode = MBProgressHUDModeAnnularDeterminate;
+    
+    HUD.delegate = self;
+    HUD.labelText = @"Loading";
+    
+    // myProgressTask uses the HUD instance to update progress
+    [HUD showWhileExecuting:@selector(myProgressTask) onTarget:self withObject:nil animated:YES];
+}
+
+- (void)myProgressTask {
+    // This just increases the progress indicator in a loop
+    float progress = 0.0f;
+    while (progress < 1.0f) {
+        progress += 0.01f;
+        HUD.progress = progress;
+        usleep(50000);
+    }
+}
+
+- (void)hudWasHidden:(MBProgressHUD *)hud {
+    // Remove HUD from screen when the HUD was hidded
+    [HUD removeFromSuperview];
+    HUD = nil;
+}
 
 @end

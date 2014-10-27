@@ -41,6 +41,7 @@
 		0584076219F633CE00C7E81C /* Placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0584076119F633CE00C7E81C /* Placeholder@2x.png */; };
 		05FEB3AF19FA0ABE005D83A0 /* DetailPickerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FEB3AE19FA0ABE005D83A0 /* DetailPickerTableViewController.m */; };
 		05FEB3B219FA3264005D83A0 /* DeviceEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FEB3B119FA3264005D83A0 /* DeviceEntity.m */; };
+		E790DB3C19FE020400EDDD81 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E790DB3B19FE020300EDDD81 /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,8 @@
 		05FEB3AE19FA0ABE005D83A0 /* DetailPickerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPickerTableViewController.m; sourceTree = "<group>"; };
 		05FEB3B019FA3264005D83A0 /* DeviceEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceEntity.h; sourceTree = "<group>"; };
 		05FEB3B119FA3264005D83A0 /* DeviceEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceEntity.m; sourceTree = "<group>"; };
+		E790DB3A19FE020300EDDD81 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		E790DB3B19FE020300EDDD81 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +140,7 @@
 		054282DF19F497E300908BB5 = {
 			isa = PBXGroup;
 			children = (
+				E790DB3919FE01F300EDDD81 /* HudView */,
 				0542832619F4DA8200908BB5 /* AFNetworking */,
 				0542831A19F4CCFE00908BB5 /* Resource */,
 				054282EA19F497E300908BB5 /* Appliances */,
@@ -280,6 +284,15 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
+		E790DB3919FE01F300EDDD81 /* HudView */ = {
+			isa = PBXGroup;
+			children = (
+				E790DB3A19FE020300EDDD81 /* MBProgressHUD.h */,
+				E790DB3B19FE020300EDDD81 /* MBProgressHUD.m */,
+			);
+			path = HudView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -405,6 +418,7 @@
 				054282EE19F497E300908BB5 /* main.m in Sources */,
 				0542833D19F4DA8200908BB5 /* AFHTTPClient.m in Sources */,
 				0542834019F4DA8200908BB5 /* AFImageRequestOperation.m in Sources */,
+				E790DB3C19FE020400EDDD81 /* MBProgressHUD.m in Sources */,
 				05FEB3B219FA3264005D83A0 /* DeviceEntity.m in Sources */,
 				0542834C19F4DD5600908BB5 /* DevicesItemsTableViewCell.m in Sources */,
 				0542833E19F4DA8200908BB5 /* AFHTTPRequestOperation.m in Sources */,

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Vv8-bu-Nia">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Vv8-bu-Nia">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
     <scenes>
-        <!--Page2-->
+        <!--View Controller - Page2-->
         <scene sceneID="DCX-2s-uxC">
             <objects>
                 <viewController id="nsd-6o-Dcv" sceneMemberID="viewController">
@@ -30,7 +30,7 @@
             </objects>
             <point key="canvasLocation" x="1078" y="592"/>
         </scene>
-        <!--Me-->
+        <!--View Controller - Me-->
         <scene sceneID="NnX-xP-JtC">
             <objects>
                 <viewController id="z77-hE-IEs" sceneMemberID="viewController">
@@ -46,7 +46,7 @@
             </objects>
             <point key="canvasLocation" x="632" y="962"/>
         </scene>
-        <!--Devices-->
+        <!--Navigation Controller - Devices-->
         <scene sceneID="2E7-wb-aqF">
             <objects>
                 <navigationController id="RsS-Bp-vgM" sceneMemberID="viewController">
@@ -71,7 +71,7 @@
             </objects>
             <point key="canvasLocation" x="546" y="-134"/>
         </scene>
-        <!--Devices-->
+        <!--Devices Table View Controller - Devices-->
         <scene sceneID="v2b-Gh-8bj">
             <objects>
                 <tableViewController id="YYn-FD-H02" customClass="DevicesTableViewController" sceneMemberID="viewController">
@@ -229,7 +229,7 @@
             </objects>
             <point key="canvasLocation" x="1042" y="-134"/>
         </scene>
-        <!--TV-->
+        <!--Table View Controller - TV-->
         <scene sceneID="kQk-GB-ZVx">
             <objects>
                 <tableViewController id="jmk-cB-dUv" sceneMemberID="viewController">
@@ -285,7 +285,7 @@
             </objects>
             <point key="canvasLocation" x="2160" y="350"/>
         </scene>
-        <!--Light-->
+        <!--Light Devices Item View Controller - Light-->
         <scene sceneID="Fh9-Xa-98T">
             <objects>
                 <tableViewController id="gxs-rJ-gCV" customClass="LightDevicesItemViewController" sceneMemberID="viewController">
@@ -619,7 +619,7 @@
             </objects>
             <point key="canvasLocation" x="2464" y="-976"/>
         </scene>
-        <!--Choose-->
+        <!--Detail Picker Table View Controller - Choose-->
         <scene sceneID="oXE-yk-WlX">
             <objects>
                 <tableViewController id="Wad-Wy-0GD" customClass="DetailPickerTableViewController" sceneMemberID="viewController">
@@ -646,12 +646,12 @@
             </objects>
             <point key="canvasLocation" x="2900" y="-976"/>
         </scene>
-        <!--Appliances Fighting-->
+        <!--Appliances View Controller - Appliances Fighting-->
         <scene sceneID="Iff-Es-Z9C">
             <objects>
                 <tabBarController title="Appliances Fighting" id="Vv8-bu-Nia" customClass="AppliancesViewController" sceneMemberID="viewController">
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Azf-ER-Rym">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -691,7 +691,7 @@
             </objects>
             <point key="canvasLocation" x="2010" y="-976"/>
         </scene>
-        <!--Me-->
+        <!--Navigation Controller - Me-->
         <scene sceneID="Yzs-iP-my6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ems-rZ-GM2" sceneMemberID="viewController">
@@ -722,10 +722,7 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4">
-            <size key="portraitSize" width="320" height="568"/>
-            <size key="landscapeSize" width="568" height="320"/>
-        </simulatedScreenMetrics>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="RHo-eR-wgu"/>

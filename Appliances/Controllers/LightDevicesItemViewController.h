@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "AddLightItemViewController.h"
+#import "MBProgressHUD.h"
 
 
 
-@interface LightDevicesItemViewController : UITableViewController <LightItemDetailViewControllerDelegate>
+@interface LightDevicesItemViewController : UITableViewController <LightItemDetailViewControllerDelegate,MBProgressHUDDelegate>
 
 
 
