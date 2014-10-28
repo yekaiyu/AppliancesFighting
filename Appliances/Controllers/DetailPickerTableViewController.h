@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DeviceEntity.h"
+#import "MBProgressHUD.h"
 
 @class DetailPickerTableViewController;
 
@@ -17,7 +18,7 @@
 
 @end
 
-@interface DetailPickerTableViewController : UITableViewController
+@interface DetailPickerTableViewController : UITableViewController<MBProgressHUDDelegate>
 
 @property(nonatomic,weak) id<didFinishDetailPickerDelegate> delegate;
 
