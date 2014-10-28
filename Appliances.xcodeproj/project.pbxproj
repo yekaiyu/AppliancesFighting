@@ -34,6 +34,7 @@
 		0542835019F4E7AC00908BB5 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 0542834E19F4E7AC00908BB5 /* second.png */; };
 		0542835219F4E86E00908BB5 /* firstIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0542835119F4E86E00908BB5 /* firstIcon.png */; };
 		0542835519F4F63D00908BB5 /* LightDevicesEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 0542835419F4F63D00908BB5 /* LightDevicesEntity.m */; };
+		055698A419FFDF2E00F85F06 /* APPRequestJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 055698A319FFDF2E00F85F06 /* APPRequestJSON.m */; };
 		057F2AB019F8BF9A00F980A2 /* TableCellGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 057F2AAF19F8BF9A00F980A2 /* TableCellGradient.png */; };
 		057F2AB219F8C2B100F980A2 /* home_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 057F2AB119F8C2B100F980A2 /* home_image.png */; };
 		0584075E19F6061400C7E81C /* AddLightItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0584075D19F6061400C7E81C /* AddLightItemViewController.m */; };
@@ -105,6 +106,8 @@
 		0542835119F4E86E00908BB5 /* firstIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firstIcon.png; sourceTree = "<group>"; };
 		0542835319F4F63D00908BB5 /* LightDevicesEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightDevicesEntity.h; sourceTree = "<group>"; };
 		0542835419F4F63D00908BB5 /* LightDevicesEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightDevicesEntity.m; sourceTree = "<group>"; };
+		055698A219FFDF2E00F85F06 /* APPRequestJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPRequestJSON.h; sourceTree = "<group>"; };
+		055698A319FFDF2E00F85F06 /* APPRequestJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPRequestJSON.m; sourceTree = "<group>"; };
 		057F2AAF19F8BF9A00F980A2 /* TableCellGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableCellGradient.png; sourceTree = "<group>"; };
 		057F2AB119F8C2B100F980A2 /* home_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_image.png; sourceTree = "<group>"; };
 		0584075C19F6061400C7E81C /* AddLightItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddLightItemViewController.h; sourceTree = "<group>"; };
@@ -166,6 +169,8 @@
 				0542831619F4CC2300908BB5 /* TableCells */,
 				054282EF19F497E300908BB5 /* AppDelegate.h */,
 				054282F019F497E300908BB5 /* AppDelegate.m */,
+				055698A219FFDF2E00F85F06 /* APPRequestJSON.h */,
+				055698A319FFDF2E00F85F06 /* APPRequestJSON.m */,
 				0542832319F4D4C100908BB5 /* Main.storyboard */,
 				054282F819F497E300908BB5 /* Images.xcassets */,
 				054282EB19F497E300908BB5 /* Supporting Files */,
@@ -416,6 +421,7 @@
 				0542834519F4DA8200908BB5 /* AFXMLRequestOperation.m in Sources */,
 				0542834219F4DA8200908BB5 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				054282EE19F497E300908BB5 /* main.m in Sources */,
+				055698A419FFDF2E00F85F06 /* APPRequestJSON.m in Sources */,
 				0542833D19F4DA8200908BB5 /* AFHTTPClient.m in Sources */,
 				0542834019F4DA8200908BB5 /* AFImageRequestOperation.m in Sources */,
 				E790DB3C19FE020400EDDD81 /* MBProgressHUD.m in Sources */,

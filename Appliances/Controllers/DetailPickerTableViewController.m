@@ -30,27 +30,8 @@ static NSOperationQueue* queue = nil;
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     //todo for all detail info
     
-//    if([self.type isEqualToString:@"VendorPicker"]){
+    [self requestJSON];
     
-        [self requestJSON];
-        
-//    }else if ([self.type isEqualToString:@"ClassPicker"]){
-//        
-//        
-//        
-//    }else if ([self.type isEqualToString:@"ModelPicker"]){
-//        
-//        
-//        
-//    }else if ([self.type isEqualToString:@"DriverPicker"]){
-//        
-//        
-//        
-//    }else if ([self.type isEqualToString:@"FunctionalPicker"]){
-//        
-//        
-//        
-//    }
     
     if(isLoading){
         
