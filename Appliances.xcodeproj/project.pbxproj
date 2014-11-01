@@ -42,6 +42,8 @@
 		0584076219F633CE00C7E81C /* Placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0584076119F633CE00C7E81C /* Placeholder@2x.png */; };
 		05FEB3AF19FA0ABE005D83A0 /* DetailPickerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FEB3AE19FA0ABE005D83A0 /* DetailPickerTableViewController.m */; };
 		05FEB3B219FA3264005D83A0 /* DeviceEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FEB3B119FA3264005D83A0 /* DeviceEntity.m */; };
+		8689A27C19FE7A5800D65F07 /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8689A27B19FE7A5800D65F07 /* login.storyboard */; };
+		8697B5E21A04B53900F7100C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8697B5E11A04B53900F7100C /* LoginViewController.m */; };
 		E790DB3C19FE020400EDDD81 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E790DB3B19FE020300EDDD81 /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +120,9 @@
 		05FEB3AE19FA0ABE005D83A0 /* DetailPickerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPickerTableViewController.m; sourceTree = "<group>"; };
 		05FEB3B019FA3264005D83A0 /* DeviceEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceEntity.h; sourceTree = "<group>"; };
 		05FEB3B119FA3264005D83A0 /* DeviceEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceEntity.m; sourceTree = "<group>"; };
+		8689A27B19FE7A5800D65F07 /* login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = login.storyboard; sourceTree = "<group>"; };
+		8697B5E01A04B53900F7100C /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = "../../View controllers/LoginViewController.h"; sourceTree = "<group>"; };
+		8697B5E11A04B53900F7100C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = "../../View controllers/LoginViewController.m"; sourceTree = "<group>"; };
 		E790DB3A19FE020300EDDD81 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		E790DB3B19FE020300EDDD81 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,6 +169,7 @@
 		054282EA19F497E300908BB5 /* Appliances */ = {
 			isa = PBXGroup;
 			children = (
+				8697B5D71A04B14200F7100C /* Model */,
 				0542831419F4CC2300908BB5 /* Controllers */,
 				0542831519F4CC2300908BB5 /* EntitySource */,
 				0542831619F4CC2300908BB5 /* TableCells */,
@@ -207,6 +213,8 @@
 		0542831419F4CC2300908BB5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8697B5E01A04B53900F7100C /* LoginViewController.h */,
+				8697B5E11A04B53900F7100C /* LoginViewController.m */,
 				054282F219F497E300908BB5 /* AppliancesViewController.h */,
 				054282F319F497E300908BB5 /* AppliancesViewController.m */,
 				0542830E19F4BB6F00908BB5 /* DevicesTableViewController.h */,
@@ -256,6 +264,7 @@
 				0542831C19F4CFB300908BB5 /* kettle.png */,
 				0542831D19F4CFB300908BB5 /* light.png */,
 				0542831E19F4CFB300908BB5 /* microwave.png */,
+				8689A27B19FE7A5800D65F07 /* login.storyboard */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -287,6 +296,14 @@
 				0542833C19F4DA8200908BB5 /* UIImageView+AFNetworking.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		8697B5D71A04B14200F7100C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		E790DB3919FE01F300EDDD81 /* HudView */ = {
@@ -390,6 +407,7 @@
 				057F2AB219F8C2B100F980A2 /* home_image.png in Resources */,
 				0542832519F4D4C100908BB5 /* Main.storyboard in Resources */,
 				0542832019F4CFB300908BB5 /* kettle.png in Resources */,
+				8689A27C19FE7A5800D65F07 /* login.storyboard in Resources */,
 				054282F919F497E300908BB5 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +434,7 @@
 				0542834319F4DA8200908BB5 /* AFPropertyListRequestOperation.m in Sources */,
 				0584075E19F6061400C7E81C /* AddLightItemViewController.m in Sources */,
 				0542831019F4BB6F00908BB5 /* DevicesTableViewController.m in Sources */,
+				8697B5E21A04B53900F7100C /* LoginViewController.m in Sources */,
 				054282F119F497E300908BB5 /* AppDelegate.m in Sources */,
 				0542834919F4DB7300908BB5 /* LightDevicesItemViewController.m in Sources */,
 				0542834519F4DA8200908BB5 /* AFXMLRequestOperation.m in Sources */,
