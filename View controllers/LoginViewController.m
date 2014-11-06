@@ -7,8 +7,10 @@
 //
 
 #import "LoginViewController.h"
-
+#import "APPRequestJSON.h"
 @interface LoginViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *UserName;
+@property (weak, nonatomic) IBOutlet UITextField *Password;
 
 @end
 
@@ -24,7 +26,34 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)timerFireMethod:(NSTimer*)theTimer
+{
+    UIAlertView *promptAlert = (UIAlertView*)[theTimer userInfo];
+    [promptAlert dismissWithClickedButtonIndex:0 animated:NO];
+    
+    promptAlert =NULL;
+}
+
 - (IBAction)Login:(id)sender {
+    if ([[_UserName text] length] == 0) {
+        UIAlertView *promptAlert = [[UIAlertView alloc] initWithTitle:nil
+                                    message:@"Please input Username!" delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
+        [NSTimer scheduledTimerWithTimeInterval:1
+                                         target:self
+                                       selector:@selector(timerFireMethod:)
+                                       userInfo:promptAlert
+                                        repeats:NO];
+        [promptAlert show];
+    }
+    else if ([[_Password text] length] == 0){
+        UIAlertView *promptAlert = [[UIAlertView alloc] initWithTitle:nil
+                                                              message:@"Please input Password!" delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
+        [NSTimer scheduledTimerWithTimeInterval:1
+                                         target:self
+                                       selector:@selector(timerFireMethod:)
+                                       userInfo:promptAlert
+                                        repeats:NO];
+    }
     
 }
 

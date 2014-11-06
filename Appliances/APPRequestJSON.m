@@ -19,6 +19,10 @@ static NSOperationQueue* queue = nil;
     
 }
 
+-(void) Login:(NSString *) Username andPassword:(NSString *)Password
+{
+    
+}
 
 - (void)requestJSON:(NSString *)requestUrl completion:(RequestBlock)block
 {

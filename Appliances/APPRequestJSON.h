@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "MBProgressHUD.h"
 
+NSString * UsernameID;
+NSString * PasswordID;
+
 typedef void (^RequestBlock)(BOOL success);
 
 @interface APPRequestJSON : NSObject
@@ -18,6 +21,8 @@ typedef void (^RequestBlock)(BOOL success);
 @property(nonatomic,strong) NSMutableArray* items;
 
 @property(nonatomic,copy) NSString* currentLanguage;
+
+-(void) Login:(NSString *) Username andPassword:(NSString *)Password;
 
 -(void)requestJSON:(NSString *)requestUrl completion:(RequestBlock)block;;
 

@@ -20,6 +20,11 @@
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
+    //使用Storyboard初始化根界面
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"login" bundle:nil];
+    self.window.rootViewController = [storyBoard instantiateInitialViewController];
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

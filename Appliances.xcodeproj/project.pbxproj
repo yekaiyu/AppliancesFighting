@@ -44,6 +44,7 @@
 		05FEB3B219FA3264005D83A0 /* DeviceEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FEB3B119FA3264005D83A0 /* DeviceEntity.m */; };
 		8689A27C19FE7A5800D65F07 /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8689A27B19FE7A5800D65F07 /* login.storyboard */; };
 		8697B5E21A04B53900F7100C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8697B5E11A04B53900F7100C /* LoginViewController.m */; };
+		86E5BA131A07C25500D6B15E /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E5BA121A07C25500D6B15E /* CreateAccountViewController.m */; };
 		E790DB3C19FE020400EDDD81 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E790DB3B19FE020300EDDD81 /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +124,8 @@
 		8689A27B19FE7A5800D65F07 /* login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = login.storyboard; sourceTree = "<group>"; };
 		8697B5E01A04B53900F7100C /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = "../../View controllers/LoginViewController.h"; sourceTree = "<group>"; };
 		8697B5E11A04B53900F7100C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = "../../View controllers/LoginViewController.m"; sourceTree = "<group>"; };
+		86E5BA111A07C25500D6B15E /* CreateAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAccountViewController.h; sourceTree = "<group>"; };
+		86E5BA121A07C25500D6B15E /* CreateAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateAccountViewController.m; sourceTree = "<group>"; };
 		E790DB3A19FE020300EDDD81 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		E790DB3B19FE020300EDDD81 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -225,6 +228,8 @@
 				0584075D19F6061400C7E81C /* AddLightItemViewController.m */,
 				05FEB3AD19FA0ABE005D83A0 /* DetailPickerTableViewController.h */,
 				05FEB3AE19FA0ABE005D83A0 /* DetailPickerTableViewController.m */,
+				86E5BA111A07C25500D6B15E /* CreateAccountViewController.h */,
+				86E5BA121A07C25500D6B15E /* CreateAccountViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -428,6 +433,7 @@
 			files = (
 				05FEB3AF19FA0ABE005D83A0 /* DetailPickerTableViewController.m in Sources */,
 				0542834419F4DA8200908BB5 /* AFURLConnectionOperation.m in Sources */,
+				86E5BA131A07C25500D6B15E /* CreateAccountViewController.m in Sources */,
 				0542834619F4DA8200908BB5 /* UIImageView+AFNetworking.m in Sources */,
 				054282F419F497E300908BB5 /* AppliancesViewController.m in Sources */,
 				0542831919F4CC6100908BB5 /* DevicesTableViewCell.m in Sources */,
