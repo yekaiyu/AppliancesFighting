@@ -10,9 +10,11 @@
 #import "AFJSONRequestOperation.h"
 #import "MBProgressHUD.h"
 #import "LightDevicesEntity.h"
+#import "Constant.h"
 
 static NSOperationQueue* queue = nil;
-
+static NSMutableString * UsernameID = nil;
+static NSMutableString * PasswordID = nil;
 @implementation APPRequestJSON{
     
     MBProgressHUD* HUD;
@@ -21,7 +23,16 @@ static NSOperationQueue* queue = nil;
 
 -(void) Login:(NSString *) Username andPassword:(NSString *)Password
 {
-    
+    [UsernameID setString:Username];
+    [PasswordID setString:Password];
+    [self requestJSON:cStrAuth completion:^(BOOL success) {
+        if (success) {
+            if ([self.items count] > 0) {
+ //               [UsernameID setString:[self.items in]];
+                [PasswordID setString:Password];
+            }
+        }
+    }];
 }
 
 - (void)requestJSON:(NSString *)requestUrl completion:(RequestBlock)block

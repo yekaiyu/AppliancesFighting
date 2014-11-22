@@ -47,22 +47,27 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="r4B-Vt-MhG" kind="push" id="2kJ-uT-d2t"/>
+                                    <segue destination="5rv-aF-jim" kind="push" id="2kJ-uT-d2t"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="EcY-tf-PCg">
+                                <rect key="frame" x="141" y="259" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="h7w-bF-XfX"/>
                     <connections>
                         <outlet property="Password" destination="NfY-UQ-BwD" id="SHw-9P-CJZ"/>
+                        <outlet property="Spin" destination="EcY-tf-PCg" id="29q-3m-QYY"/>
                         <outlet property="UserName" destination="TdP-xf-yvY" id="KRD-7p-DYe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVr-pK-66O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="325" y="614"/>
+            <point key="canvasLocation" x="857" y="614"/>
         </scene>
-        <!--Title-->
+        <!--Create Account-->
         <scene sceneID="1Mf-rk-AJP">
             <objects>
                 <viewController id="r4B-Vt-MhG" customClass="CreateAccountViewController" sceneMemberID="viewController">
@@ -74,14 +79,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IRi-rc-6vP">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="WXe-yH-i56">
-                                        <barButtonItem key="leftBarButtonItem" title="Return" id="RQO-2V-gT5"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserName /Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y0W-eK-WQm">
                                 <rect key="frame" x="16" y="101" width="290" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -109,7 +106,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="1iq-a5-xCk"/>
+                    <navigationItem key="navigationItem" title="Create Account" id="1iq-a5-xCk"/>
                     <connections>
                         <outlet property="Password" destination="waX-8I-y8r" id="BrV-S4-2yb"/>
                         <outlet property="RePassword" destination="z0K-us-1QD" id="Mwu-Yq-R8e"/>
@@ -118,7 +115,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="br3-8A-8nU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="715" y="614"/>
+            <point key="canvasLocation" x="1779" y="614"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sS0-oR-272">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5rv-aF-jim" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Dvr-up-bPD"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tE7-bD-r5w">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="r4B-Vt-MhG" kind="relationship" relationship="rootViewController" id="4V8-P4-b5I"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zFn-Va-K5f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1247" y="614"/>
         </scene>
     </scenes>
     <resources>

@@ -11,6 +11,7 @@
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *UserName;
 @property (weak, nonatomic) IBOutlet UITextField *Password;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *Spin;
 
 @end
 
@@ -54,7 +55,13 @@
                                        userInfo:promptAlert
                                         repeats:NO];
     }
-    
+
+    [_Spin startAnimating];
+    APPRequestJSON* requestJSON;
+    requestJSON = [[APPRequestJSON alloc]init];
+    [requestJSON Login:[_UserName text] andPassword:[_Password text]];
+    [_Spin stopAnimating];
+
 }
 
 /*

@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "MBProgressHUD.h"
 
-NSString * UsernameID;
-NSString * PasswordID;
 
 typedef void (^RequestBlock)(BOOL success);
 
