@@ -22,7 +22,7 @@ typedef void (^RequestBlock)(BOOL success);
 
 -(void) Login:(NSString *) Username andPassword:(NSString *)Password;
 
--(void)requestJSON:(NSString *)requestUrl completion:(RequestBlock)block;;
+-(void)requestJSON:(NSString *)requestUrl completion:(RequestBlock)block;
 
 -(void)hideHUD:(UIViewController *)controller;
 

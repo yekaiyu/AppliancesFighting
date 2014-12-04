@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 
 extern NSString * const cStrAuth;
-
+extern NSString *const LoginSuccess;
+extern NSString *const LoginFail;
 @interface Constant : NSObject
 
 @end

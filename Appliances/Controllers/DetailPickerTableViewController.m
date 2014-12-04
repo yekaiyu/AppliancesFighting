@@ -7,7 +7,7 @@
 //
 
 #import "DetailPickerTableViewController.h"
-#import "AFJSONRequestOperation.h"
+#import "NetService.h"
 #import "DeviceEntity.h"
 
 static NSOperationQueue* queue = nil;
@@ -122,32 +122,32 @@ static NSOperationQueue* queue = nil;
     
     [request valueForHTTPHeaderField:authValue];
     
-    AFJSONRequestOperation* operation = [AFJSONRequestOperation
-                                         JSONRequestOperationWithRequest:request
-                                         success:^(NSURLRequest* request,NSHTTPURLResponse* response,id JSON){
-                                             
-                                             [self parseDictionary:JSON];
-                                             
-                                             [self hudWasHidden:HUD];
-                                             isLoading = NO;
-                                      
-                                             [self.tableView reloadData];
-                                             
-                                         } failure:^(NSURLRequest* request,NSURLResponse* response,NSError* error,id JSON){
-                                             
-                                             isLoading = NO;
-                                         
-                                             NSLog(@"request fail... %@",error);
-                                             
-                                         }];
-    
-    
-    
-    operation.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json",@"text/javascript",nil];
-    
-    queue = [[NSOperationQueue alloc] init];
-    
-    [queue addOperation:operation];
+//    AFJSONRequestOperation* operation = [AFJSONRequestOperation
+//                                         JSONRequestOperationWithRequest:request
+//                                         success:^(NSURLRequest* request,NSHTTPURLResponse* response,id JSON){
+//                                             
+//                                             [self parseDictionary:JSON];
+//                                             
+//                                             [self hudWasHidden:HUD];
+//                                             isLoading = NO;
+//                                      
+//                                             [self.tableView reloadData];
+//                                             
+//                                         } failure:^(NSURLRequest* request,NSURLResponse* response,NSError* error,id JSON){
+//                                             
+//                                             isLoading = NO;
+//                                         
+//                                             NSLog(@"request fail... %@",error);
+//                                             
+//                                         }];
+//    
+//    
+//    
+//    operation.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json",@"text/javascript",nil];
+//    
+//    queue = [[NSOperationQueue alloc] init];
+//    
+//    [queue addOperation:operation];
     
 }
 

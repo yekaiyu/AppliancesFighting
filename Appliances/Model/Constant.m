@@ -10,7 +10,8 @@
 
 NSString * const cStrSite =@"http://www.driverstack.com";
 NSString * const cStrAuth =@"http://www.driverstack.com/api/1.0/auth/requestAccessToken";
-
+NSString *const LoginSuccess = @"LoginSuccessNotification";
+NSString *const LoginFail = @"LoginFailedNotification";
 @implementation Constant
 
 @end

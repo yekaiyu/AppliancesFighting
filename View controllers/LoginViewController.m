@@ -8,11 +8,15 @@
 
 #import "LoginViewController.h"
 #import "APPRequestJSON.h"
+#import "Constant.h"
+#import "NetService.h"
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *UserName;
 @property (weak, nonatomic) IBOutlet UITextField *Password;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *Spin;
 
+@property (nonatomic, weak) id cLoginFailObject;
+@property (nonatomic, weak) id cLoginSuccessObject;
 @end
 
 @implementation LoginViewController
@@ -57,18 +61,45 @@
     }
 
     [_Spin startAnimating];
-    APPRequestJSON* requestJSON;
-    requestJSON = [[APPRequestJSON alloc]init];
-    [requestJSON Login:[_UserName text] andPassword:[_Password text]];
-    [_Spin stopAnimating];
-
+    [NetService Login:[_UserName text] andPassword:[_Password text]];
+}
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    __weak LoginViewController *welf = self;
+    self.cLoginFailObject = [[NSNotificationCenter defaultCenter] addObserverForName:LoginFail object:Nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+        [welf LoginFailed:note];
+    }];
+    self.cLoginSuccessObject = [[NSNotificationCenter defaultCenter] addObserverForName:LoginSuccess object:Nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+        [welf LoginSuccess:note];
+    }];
 }
 
+- (void) LoginFailed:(NSNotification *)note
+{
+    if (_Spin) {
+        [_Spin stopAnimating];
+    }
+}
+- (void) LoginSuccess:(NSNotification *)note
+{
+    if (_Spin) {
+        [_Spin stopAnimating];
+    }
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self.cLoginFailObject];
+    [[NSNotificationCenter defaultCenter] removeObserver:self.cLoginSuccessObject];
+}
 /*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+
+- // In a storyboard-based application, you will often want to do a little preparation before navigation(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
