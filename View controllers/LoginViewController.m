@@ -66,6 +66,11 @@
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    if (_Spin) {
+        [_Spin stopAnimating];
+    }
+    
     __weak LoginViewController *welf = self;
     self.cLoginFailObject = [[NSNotificationCenter defaultCenter] addObserverForName:LoginFail object:Nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
         [welf LoginFailed:note];
@@ -86,6 +91,12 @@
     if (_Spin) {
         [_Spin stopAnimating];
     }
+    
+    //使用Storyboard初始化根界面
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *vc = [storyBoard instantiateInitialViewController];
+    
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void) viewWillDisappear:(BOOL)animated

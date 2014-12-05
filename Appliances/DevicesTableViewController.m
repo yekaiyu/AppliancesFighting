@@ -8,7 +8,7 @@
 
 #import "DevicesTableViewController.h"
 #import "DevicesTableViewCell.h"
-#import "AFJSONRequestOperation.h"
+#import "AFNetworking.h"
 #import "LightDevicesEntity.h"
 #import "LightDevicesItemViewController.h"
 
