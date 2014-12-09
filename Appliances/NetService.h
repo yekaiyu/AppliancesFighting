@@ -11,5 +11,6 @@
 @interface NetService : NSObject
 
 +(void) Login:(NSString *) Username andPassword:(NSString *)Password;
++(void) CreateAccount:(NSDictionary *) Account;
 @end
 

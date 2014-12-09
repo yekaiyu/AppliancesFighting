@@ -49,6 +49,7 @@
                                        userInfo:promptAlert
                                         repeats:NO];
         [promptAlert show];
+        return;
     }
     else if ([[_Password text] length] == 0){
         UIAlertView *promptAlert = [[UIAlertView alloc] initWithTitle:nil
@@ -58,6 +59,8 @@
                                        selector:@selector(timerFireMethod:)
                                        userInfo:promptAlert
                                         repeats:NO];
+        [promptAlert show];
+        return;
     }
 
     [_Spin startAnimating];

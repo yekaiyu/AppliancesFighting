@@ -103,6 +103,9 @@
                                     <action selector="CreatAccount:" destination="r4B-Vt-MhG" eventType="touchUpInside" id="5Ll-Y9-qVM"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fKa-Fo-IN7">
+                                <rect key="frame" x="150" y="245" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -110,6 +113,7 @@
                     <connections>
                         <outlet property="Password" destination="waX-8I-y8r" id="BrV-S4-2yb"/>
                         <outlet property="RePassword" destination="z0K-us-1QD" id="Mwu-Yq-R8e"/>
+                        <outlet property="Spin" destination="fKa-Fo-IN7" id="fH9-tb-mCc"/>
                         <outlet property="UserName" destination="Y0W-eK-WQm" id="0lD-4P-2UG"/>
                     </connections>
                 </viewController>

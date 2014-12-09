@@ -9,8 +9,11 @@
 #import <Foundation/Foundation.h>
 
 extern NSString * const cStrAuth;
+extern NSString * const cStrCreateAccount;
 extern NSString *const LoginSuccess;
 extern NSString *const LoginFail;
+extern NSString * const CreateAccountuccess;
+extern NSString * const CreateAccountFail;
 @interface Constant : NSObject
 
 @end

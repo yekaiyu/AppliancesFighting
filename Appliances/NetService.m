@@ -18,8 +18,6 @@ static NSMutableString * PasswordID = nil;
 
 +(void) Login:(NSString *) Username andPassword:(NSString *)Password
 {
-//    [UsernameID setString:Username];
-//    [[AFJSONRequestSerializer serializer] setAuthorizationHeaderFieldWithUsername:Username password:Password];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
@@ -36,5 +34,19 @@ static NSMutableString * PasswordID = nil;
     }];
 }
 
++(void) CreateAccount:(NSDictionary *) Account
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
+//    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:UsernameID password:PasswordID];
+    [manager POST:cStrCreateAccount parameters:Account success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSNotification * note = [[NSNotification alloc] initWithName:CreateAccountuccess object:nil userInfo:nil];
+        [[NSNotificationCenter defaultCenter] postNotification:note];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSNotification * note = [[NSNotification alloc] initWithName:CreateAccountFail object:nil userInfo:nil];
+        [[NSNotificationCenter defaultCenter] postNotification:note];
+    }];
+}
 @end
 
