@@ -10,6 +10,7 @@
 
 extern NSString * const cStrAuth;
 extern NSString * const cStrCreateAccount;
+extern NSString * const cStrGetDevices;
 extern NSString *const LoginSuccess;
 extern NSString *const LoginFail;
 extern NSString * const CreateAccountuccess;

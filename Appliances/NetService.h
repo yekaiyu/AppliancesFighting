@@ -12,5 +12,6 @@
 
 +(void) Login:(NSString *) Username andPassword:(NSString *)Password;
 +(void) CreateAccount:(NSDictionary *) Account;
++(void) GetDevice;
 @end
 

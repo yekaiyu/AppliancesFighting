@@ -12,7 +12,7 @@
 #import "AFNetworking.h"
 static NSMutableString * UsernameID = nil;
 static NSMutableString * PasswordID = nil;
-
+static NSMutableString * UserID = nil;
 @implementation NetService
 
 
@@ -24,8 +24,9 @@ static NSMutableString * PasswordID = nil;
     [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:Username password:Password];
     [manager POST:cStrAuth parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary * dictionary = responseObject;
-        UsernameID = [dictionary objectForKey:@"key"];
-        PasswordID = [dictionary objectForKey:@"secret"];
+        [UsernameID initWithString:[dictionary objectForKey:@"key"]];
+        [PasswordID initWithString:[dictionary objectForKey:@"secret"]];
+        [UserID initWithString:Username];
         NSNotification * note = [[NSNotification alloc] initWithName:LoginSuccess object:nil userInfo:nil];
         [[NSNotificationCenter defaultCenter] postNotification:note];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -37,14 +38,29 @@ static NSMutableString * PasswordID = nil;
 +(void) CreateAccount:(NSDictionary *) Account
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
-//    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:UsernameID password:PasswordID];
     [manager POST:cStrCreateAccount parameters:Account success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSNotification * note = [[NSNotification alloc] initWithName:CreateAccountuccess object:nil userInfo:nil];
         [[NSNotificationCenter defaultCenter] postNotification:note];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSNotification * note = [[NSNotification alloc] initWithName:CreateAccountFail object:nil userInfo:nil];
+        [[NSNotificationCenter defaultCenter] postNotification:note];
+    }];
+}
+
++(void) GetDevice
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
+    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:UsernameID password:PasswordID];
+    NSString * cStrGetDev = [[NSString alloc] initWithFormat:cStrGetDevices, UserID];
+    [manager POST:cStrGetDev parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSNotification * note = [[NSNotification alloc] initWithName:LoginSuccess object:nil userInfo:responseObject];
+        [[NSNotificationCenter defaultCenter] postNotification:note];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSNotification * note = [[NSNotification alloc] initWithName:LoginFail object:nil userInfo:nil];
         [[NSNotificationCenter defaultCenter] postNotification:note];
     }];
 }

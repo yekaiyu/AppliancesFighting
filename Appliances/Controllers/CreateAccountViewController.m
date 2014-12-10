@@ -150,7 +150,7 @@
         [_Spin stopAnimating];
     }
     UIAlertView *promptAlert = [[UIAlertView alloc] initWithTitle:nil
-                                                          message:@"Create Account Success, Please re-try!" delegate:nil cancelButtonTitle:@"Create Account Successed!" otherButtonTitles:nil];
+                                                          message:@"Create Account Success!" delegate:nil cancelButtonTitle:@"OK!" otherButtonTitles:nil];
     [promptAlert show];
     promptAlert = NULL;
     [self.navigationController popViewControllerAnimated:YES];

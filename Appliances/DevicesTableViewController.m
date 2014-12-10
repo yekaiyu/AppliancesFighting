@@ -17,7 +17,7 @@ static NSOperationQueue* queue = nil;
 @interface DevicesTableViewController (){
     
     NSMutableArray* lightItems;
-    
+    BOOL * bDevices;
 }
 
 @end

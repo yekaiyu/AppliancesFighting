@@ -34,6 +34,7 @@
 		05FEB3B219FA3264005D83A0 /* DeviceEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FEB3B119FA3264005D83A0 /* DeviceEntity.m */; };
 		73F34195505F6BF04AE43663 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D2E241546174524BC6E759A /* libPods.a */; };
 		863846F31A2B55B9002C1DC1 /* NetService.m in Sources */ = {isa = PBXBuildFile; fileRef = 863846F21A2B55B9002C1DC1 /* NetService.m */; };
+		864DA1D81A3899C50032E785 /* DeviceManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 864DA1D71A3899C50032E785 /* DeviceManage.m */; };
 		8689A27C19FE7A5800D65F07 /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8689A27B19FE7A5800D65F07 /* login.storyboard */; };
 		8697B5E21A04B53900F7100C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8697B5E11A04B53900F7100C /* LoginViewController.m */; };
 		86E5BA131A07C25500D6B15E /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E5BA121A07C25500D6B15E /* CreateAccountViewController.m */; };
@@ -78,8 +79,8 @@
 		0542834B19F4DD5600908BB5 /* DevicesItemsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DevicesItemsTableViewCell.m; sourceTree = "<group>"; };
 		0542834E19F4E7AC00908BB5 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		0542835119F4E86E00908BB5 /* firstIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firstIcon.png; sourceTree = "<group>"; };
-		0542835319F4F63D00908BB5 /* LightDevicesEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightDevicesEntity.h; sourceTree = "<group>"; };
-		0542835419F4F63D00908BB5 /* LightDevicesEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightDevicesEntity.m; sourceTree = "<group>"; };
+		0542835319F4F63D00908BB5 /* LightDevicesEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LightDevicesEntity.h; path = Appliances/EntitySource/LightDevicesEntity.h; sourceTree = "<group>"; };
+		0542835419F4F63D00908BB5 /* LightDevicesEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LightDevicesEntity.m; path = Appliances/EntitySource/LightDevicesEntity.m; sourceTree = "<group>"; };
 		055698A219FFDF2E00F85F06 /* APPRequestJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPRequestJSON.h; sourceTree = "<group>"; };
 		055698A319FFDF2E00F85F06 /* APPRequestJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPRequestJSON.m; sourceTree = "<group>"; };
 		057F2AAF19F8BF9A00F980A2 /* TableCellGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableCellGradient.png; sourceTree = "<group>"; };
@@ -90,11 +91,13 @@
 		0584076119F633CE00C7E81C /* Placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Placeholder@2x.png"; sourceTree = "<group>"; };
 		05FEB3AD19FA0ABE005D83A0 /* DetailPickerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPickerTableViewController.h; sourceTree = "<group>"; };
 		05FEB3AE19FA0ABE005D83A0 /* DetailPickerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPickerTableViewController.m; sourceTree = "<group>"; };
-		05FEB3B019FA3264005D83A0 /* DeviceEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceEntity.h; sourceTree = "<group>"; };
-		05FEB3B119FA3264005D83A0 /* DeviceEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceEntity.m; sourceTree = "<group>"; };
+		05FEB3B019FA3264005D83A0 /* DeviceEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceEntity.h; path = Appliances/EntitySource/DeviceEntity.h; sourceTree = "<group>"; };
+		05FEB3B119FA3264005D83A0 /* DeviceEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeviceEntity.m; path = Appliances/EntitySource/DeviceEntity.m; sourceTree = "<group>"; };
 		649D323D510AB0F66B4B6627 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		863846F11A2B55B9002C1DC1 /* NetService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetService.h; sourceTree = "<group>"; };
 		863846F21A2B55B9002C1DC1 /* NetService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetService.m; sourceTree = "<group>"; };
+		864DA1D61A3899C50032E785 /* DeviceManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceManage.h; sourceTree = "<group>"; };
+		864DA1D71A3899C50032E785 /* DeviceManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceManage.m; sourceTree = "<group>"; };
 		8689A27B19FE7A5800D65F07 /* login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = login.storyboard; sourceTree = "<group>"; };
 		8697B5E01A04B53900F7100C /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = "../../View controllers/LoginViewController.h"; sourceTree = "<group>"; };
 		8697B5E11A04B53900F7100C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = "../../View controllers/LoginViewController.m"; sourceTree = "<group>"; };
@@ -155,7 +158,6 @@
 				86932F601A207DB100AE9966 /* service */,
 				8697B5D71A04B14200F7100C /* Model */,
 				0542831419F4CC2300908BB5 /* Controllers */,
-				0542831519F4CC2300908BB5 /* EntitySource */,
 				0542831619F4CC2300908BB5 /* TableCells */,
 				054282EF19F497E300908BB5 /* AppDelegate.h */,
 				054282F019F497E300908BB5 /* AppDelegate.m */,
@@ -215,17 +217,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		0542831519F4CC2300908BB5 /* EntitySource */ = {
-			isa = PBXGroup;
-			children = (
-				0542835319F4F63D00908BB5 /* LightDevicesEntity.h */,
-				0542835419F4F63D00908BB5 /* LightDevicesEntity.m */,
-				05FEB3B019FA3264005D83A0 /* DeviceEntity.h */,
-				05FEB3B119FA3264005D83A0 /* DeviceEntity.m */,
-			);
-			path = EntitySource;
-			sourceTree = "<group>";
-		};
 		0542831619F4CC2300908BB5 /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +259,8 @@
 			children = (
 				863846F11A2B55B9002C1DC1 /* NetService.h */,
 				863846F21A2B55B9002C1DC1 /* NetService.m */,
+				864DA1D61A3899C50032E785 /* DeviceManage.h */,
+				864DA1D71A3899C50032E785 /* DeviceManage.m */,
 			);
 			name = service;
 			sourceTree = "<group>";
@@ -275,6 +268,10 @@
 		8697B5D71A04B14200F7100C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0542835319F4F63D00908BB5 /* LightDevicesEntity.h */,
+				0542835419F4F63D00908BB5 /* LightDevicesEntity.m */,
+				05FEB3B019FA3264005D83A0 /* DeviceEntity.h */,
+				05FEB3B119FA3264005D83A0 /* DeviceEntity.m */,
 				86F5B4F31A1A3564000EC915 /* Constant.h */,
 				86F5B4F41A1A3564000EC915 /* Constant.m */,
 			);
@@ -450,6 +447,7 @@
 				86E5BA131A07C25500D6B15E /* CreateAccountViewController.m in Sources */,
 				054282F419F497E300908BB5 /* AppliancesViewController.m in Sources */,
 				86F5B4F51A1A3564000EC915 /* Constant.m in Sources */,
+				864DA1D81A3899C50032E785 /* DeviceManage.m in Sources */,
 				0542831919F4CC6100908BB5 /* DevicesTableViewCell.m in Sources */,
 				0584075E19F6061400C7E81C /* AddLightItemViewController.m in Sources */,
 				0542831019F4BB6F00908BB5 /* DevicesTableViewController.m in Sources */,
