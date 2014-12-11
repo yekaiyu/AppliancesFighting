@@ -12,4 +12,9 @@
 
 @interface DeviceManage : NSObject
 
+//-(DeviceManage *)init;
++(DeviceManage *)sharedInstance;
+
+-(BOOL)GetDevicesFromNet:(BOOL)fouce;
+-(NSMutableArray*)GetDevices;
 @end

@@ -66,7 +66,7 @@ static NSOperationQueue* queue = nil;
     //todo with a bug for choose;
     if([self.type isEqualToString:@"VendorPicker"]){
        
-        cell.textLabel.text = vendor.vendorShortName;
+        cell.textLabel.text = vendor.vendorName;
         cell.detailTextLabel.text = vendor.vendorDescription;
         
     }else if ([self.type isEqualToString:@"ClassPicker"]){
@@ -163,11 +163,11 @@ static NSOperationQueue* queue = nil;
             
             deviceEntity.vendorId = [resultDict objectForKey:@"id"];
             
-            deviceEntity.vendorShortName = [resultDict objectForKey:@"shortName"];
+            deviceEntity.vendorName = [resultDict objectForKey:@"shortName"];
             
             deviceEntity.vendorDescription = [resultDict objectForKey:@"description"];
             
-            deviceEntity.vendorFullName = [resultDict objectForKey:@"fullNameName"];
+            deviceEntity.name = [resultDict objectForKey:@"fullNameName"];
             
             [items addObject:deviceEntity];
             

@@ -10,13 +10,39 @@
 #import "NetService.h"
 #import "Constant.h"
 #import "AFNetworking.h"
-static NSMutableString * UsernameID = nil;
-static NSMutableString * PasswordID = nil;
-static NSMutableString * UserID = nil;
+
+static NetService * cNetService = nil;
+
+@interface NetService()
+
+@property(nonatomic)   BOOL * bLogin;
+@property(nonatomic,copy)   NSMutableString * UsernameID;
+@property(nonatomic,copy)   NSMutableString * PasswordID;
+@property(nonatomic,copy)   NSMutableString * UserID;
+@property(nonatomic,copy)   NSDictionary * Devices;
+@end
+
 @implementation NetService
 
+-(NetService *)init
+{
+    self = [super init];
+    if (self) {
+        _bLogin = FALSE;
+        _Devices = nil;
+    }
+    return self;
+}
 
-+(void) Login:(NSString *) Username andPassword:(NSString *)Password
++(NetService *)sharedInstance
+{
+    if (cNetService == nil) {
+        cNetService = [[NetService alloc] init];
+    }
+    return cNetService;
+}
+
+-(void) Login:(NSString *) Username andPassword:(NSString *)Password
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -24,18 +50,21 @@ static NSMutableString * UserID = nil;
     [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:Username password:Password];
     [manager POST:cStrAuth parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary * dictionary = responseObject;
-        [UsernameID initWithString:[dictionary objectForKey:@"key"]];
-        [PasswordID initWithString:[dictionary objectForKey:@"secret"]];
-        [UserID initWithString:Username];
+        
+        [_UsernameID initWithString:[dictionary objectForKey:@"key"]];
+        [_PasswordID initWithString:[dictionary objectForKey:@"secret"]];
+        [_UserID initWithString:Username];
+        _bLogin = TRUE;
         NSNotification * note = [[NSNotification alloc] initWithName:LoginSuccess object:nil userInfo:nil];
         [[NSNotificationCenter defaultCenter] postNotification:note];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        _bLogin = FALSE;
         NSNotification * note = [[NSNotification alloc] initWithName:LoginFail object:nil userInfo:nil];
         [[NSNotificationCenter defaultCenter] postNotification:note];
     }];
 }
 
-+(void) CreateAccount:(NSDictionary *) Account
+-(void) CreateAccount:(NSDictionary *) Account
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
      manager.responseSerializer = [AFHTTPResponseSerializer serializer];
@@ -49,20 +78,26 @@ static NSMutableString * UserID = nil;
     }];
 }
 
-+(void) GetDevice
+-(NSDictionary*) GetDevice
 {
+    _Devices = nil;
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
-    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:UsernameID password:PasswordID];
-    NSString * cStrGetDev = [[NSString alloc] initWithFormat:cStrGetDevices, UserID];
-    [manager POST:cStrGetDev parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSNotification * note = [[NSNotification alloc] initWithName:LoginSuccess object:nil userInfo:responseObject];
-        [[NSNotificationCenter defaultCenter] postNotification:note];
+    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:_UsernameID password:_PasswordID];
+    NSString * cStrGetDev = [[NSString alloc] initWithFormat:cStrGetDevices, _UserID];
+    AFHTTPRequestOperation * Operation = [manager POST:cStrGetDev parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        _Devices = responseObject;
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSNotification * note = [[NSNotification alloc] initWithName:LoginFail object:nil userInfo:nil];
-        [[NSNotificationCenter defaultCenter] postNotification:note];
     }];
+    [Operation waitUntilFinished];
+
+    return _Devices;
+}
+
+-(BOOL) isLogin
+{
+    return _bLogin;
 }
 @end
 

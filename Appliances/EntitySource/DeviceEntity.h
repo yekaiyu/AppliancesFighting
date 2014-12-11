@@ -58,7 +58,7 @@
 
 @property(nonatomic,copy) NSString*  driverId;
 
-@property(nonatomic,copy) NSString*  defaultFunctionalDeviceIndex;
+@property(nonatomic) NSInteger*  defaultFunctionalDeviceIndex;
 
 @property(nonatomic,copy) HardwareType *  hardwareType;
 

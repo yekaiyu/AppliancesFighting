@@ -110,7 +110,7 @@ static NSOperationQueue* queue = nil;
         
         LightDevicesEntity* lightEntity = [[LightDevicesEntity alloc] init];
         
-        lightEntity.lightId = [resultDict objectForKey:@"id"];
+        lightEntity.ID = [resultDict objectForKey:@"id"];
         
         lightEntity.modelId = [resultDict objectForKey:@"modelId"];
         
@@ -122,7 +122,7 @@ static NSOperationQueue* queue = nil;
         
         lightEntity.revision = [resultDict objectForKey:@"revision"];
         
-        lightEntity.mfgSeriaNumber = [resultDict objectForKey:@"mfgSerialNumber"];
+        lightEntity.mfgSerialNumber = [resultDict objectForKey:@"mfgSerialNumber"];
         
         lightEntity.factoryConfigure = [resultDict objectForKey:@"factoryConfigure"];
         
@@ -134,9 +134,9 @@ static NSOperationQueue* queue = nil;
         
         lightEntity.location = [resultDict objectForKey:@"location"];
         
-        lightEntity.itemDescription = [resultDict objectForKey:@"description"];
+        lightEntity.Description = [resultDict objectForKey:@"description"];
         
-        lightEntity.itemDescription = [resultDict objectForKey:@"driverId"];
+        lightEntity.driverId = [resultDict objectForKey:@"driverId"];
         
         lightEntity.defaultFunctionalDeviceIndex = (long)[resultDict objectForKey:@"defaultFunctionalDeviceIndex"];
         

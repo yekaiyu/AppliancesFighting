@@ -41,6 +41,6 @@
 //
 //@property(nonatomic,assign) long defaultFunctionalDeviceIndex;
 //
-//@property(nonatomic,copy) NSString* lightImagePath;
+@property(nonatomic,copy) NSString* lightImagePath;
 
 @end

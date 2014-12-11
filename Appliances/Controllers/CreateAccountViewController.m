@@ -92,7 +92,7 @@
     valueArray[4] = @"null";
     NSDictionary * Account = [NSDictionary dictionaryWithObjects:(id *)valueArray
                                             forKeys:(id *)keyArray count:5];
-    [NetService CreateAccount:Account];
+    [[NetService sharedInstance] CreateAccount:Account];
 }
 
 /*

@@ -132,7 +132,7 @@ static NSOperationQueue* queue = nil;
     lightCell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"TableCellGradient"]];
     
     //todo
-    UIImage* image = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%@_image_60.png",DocumentsPath,item.lightId]];
+    UIImage* image = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%@_image_60.png",DocumentsPath,item.ID]];
         
     if(item.lightImagePath != nil){
        

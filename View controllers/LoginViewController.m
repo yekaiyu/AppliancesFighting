@@ -64,7 +64,7 @@
     }
 
     [_Spin startAnimating];
-    [NetService Login:[_UserName text] andPassword:[_Password text]];
+    [[NetService sharedInstance] Login:[_UserName text] andPassword:[_Password text]];
 }
 - (void) viewWillAppear:(BOOL)animated
 {

@@ -51,7 +51,7 @@
     
         lightItem.location = self.locationField.text;
     
-        lightItem.itemDescription = self.simpleDescription.text;
+        lightItem.Description= self.simpleDescription.text;
     
         [self.delegate itemDetailViewController:self didFinishAddedItem:lightItem];
     
@@ -65,7 +65,7 @@
         
         self.editLightItem.location = self.locationField.text;
         
-        self.editLightItem.itemDescription = self.simpleDescription.text;
+        self.editLightItem.Description = self.simpleDescription.text;
         
         self.editLightItem.lightImagePath = filePath;
         
@@ -136,7 +136,7 @@
     
     if([type isEqualToString:@"VendorPicker"]){
         
-        self.vendorLabel.text = vendorItem.vendorShortName;
+        self.vendorLabel.text = vendorItem.vendorName;
         
     }else if ([type isEqualToString:@"ClassPicker"]){
         
@@ -283,11 +283,11 @@
     //把刚刚图片转换的data对象拷贝至沙盒中 并保存为image.png
     [fileManager createDirectoryAtPath:DocumentsPath withIntermediateDirectories:YES attributes:nil error:nil];
     [fileManager createFileAtPath:[DocumentsPath stringByAppendingString:
-                                   [NSString stringWithFormat: @"/%@_image_%@.png",self.editLightItem.lightId,size]] contents:data attributes:nil];
+                                   [NSString stringWithFormat: @"/%@_image_%@.png",self.editLightItem.ID,size]] contents:data attributes:nil];
     
     //得到选择后沙盒中图片的完整路径
     filePath = [[NSString alloc]initWithFormat:@"%@%@",DocumentsPath,
-                [NSString stringWithFormat: @"/%@_image_%@.png",self.editLightItem.lightId,size]];
+                [NSString stringWithFormat: @"/%@_image_%@.png",self.editLightItem.ID,size]];
     NSError* error;
     
     NSLog(@"File Path : %@",filePath);
@@ -315,7 +315,7 @@
         
         if(self.editLightItem.description == nil){
             
-            self.simpleDescription.text = self.editLightItem.itemDescription;
+            self.simpleDescription.text = self.editLightItem.Description;
         }else{
             self.simpleDescription.text = @"";
         }
@@ -332,7 +332,7 @@
         
         self.functionalLabel.text = @"";
         
-        UIImage* image120 = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%@_image_120.png",DocumentsPath,self.editLightItem.lightId]];
+        UIImage* image120 = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%@_image_120.png",DocumentsPath,self.editLightItem.ID]];
         
         if(image120 !=nil){
             
