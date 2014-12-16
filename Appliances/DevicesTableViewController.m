@@ -43,6 +43,23 @@ static NSOperationQueue* queue = nil;
     
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+//    self.navigationItem.leftBarButtonItem.hidden = YES;
+    [self.navigationController.navigationItem hidesBackButton];
+}
 
+-(void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.navigationController.navigationItem hidesBackButton];
+}
+-(void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+//    [self.navigationController setNavigationBarHidden:NO];
+    
+}
 
 @end

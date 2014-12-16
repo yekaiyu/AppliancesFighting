@@ -15,7 +15,7 @@ static NetService * cNetService = nil;
 
 @interface NetService()
 
-@property(nonatomic)   BOOL * bLogin;
+@property(nonatomic)   BOOL bLogin;
 @property(nonatomic,copy)   NSMutableString * UsernameID;
 @property(nonatomic,copy)   NSMutableString * PasswordID;
 @property(nonatomic,copy)   NSMutableString * UserID;
@@ -51,9 +51,9 @@ static NetService * cNetService = nil;
     [manager POST:cStrAuth parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary * dictionary = responseObject;
         
-        [_UsernameID initWithString:[dictionary objectForKey:@"key"]];
-        [_PasswordID initWithString:[dictionary objectForKey:@"secret"]];
-        [_UserID initWithString:Username];
+        _UsernameID = [[NSMutableString alloc] initWithString:[dictionary objectForKey:@"key"]];
+        _PasswordID = [[NSMutableString alloc] initWithString:[dictionary objectForKey:@"secret"]];
+        _UserID = [[NSMutableString alloc] initWithString:Username];
         _bLogin = TRUE;
         NSNotification * note = [[NSNotification alloc] initWithName:LoginSuccess object:nil userInfo:nil];
         [[NSNotificationCenter defaultCenter] postNotification:note];
@@ -89,6 +89,7 @@ static NetService * cNetService = nil;
     AFHTTPRequestOperation * Operation = [manager POST:cStrGetDev parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         _Devices = responseObject;
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
     }];
     [Operation waitUntilFinished];
 

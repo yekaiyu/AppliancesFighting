@@ -10,6 +10,7 @@
 #import "APPRequestJSON.h"
 #import "Constant.h"
 #import "NetService.h"
+#import "AppDelegate.h"
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *UserName;
 @property (weak, nonatomic) IBOutlet UITextField *Password;
@@ -73,6 +74,8 @@
     if (_Spin) {
         [_Spin stopAnimating];
     }
+    [self.navigationController setNavigationBarHidden:YES];
+    
     
     __weak LoginViewController *welf = self;
     self.cLoginFailObject = [[NSNotificationCenter defaultCenter] addObserverForName:LoginFail object:Nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
@@ -83,6 +86,11 @@
     }];
 }
 
+-(void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+   
+}
 - (void) LoginFailed:(NSNotification *)note
 {
     if (_Spin) {
@@ -99,13 +107,19 @@
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *vc = [storyBoard instantiateInitialViewController];
     
-    [self.navigationController pushViewController:vc animated:YES];
+//    [self.navigationController pushViewController:vc animated:YES];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    if (![appDelegate InitUser:YES]) {
+        [self ShowPrompt:@"Init user information failed!"];
+        return;
+    }
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (void) viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
+    [self.navigationController setNavigationBarHidden:NO];
     [[NSNotificationCenter defaultCenter] removeObserver:self.cLoginFailObject];
     [[NSNotificationCenter defaultCenter] removeObserver:self.cLoginSuccessObject];
 }
@@ -118,5 +132,16 @@
     // Pass the selected object to the new view controller.
 }
 */
+-(void)ShowPrompt:(NSString *)strPrompt
+{
+    UIAlertView *promptAlert = [[UIAlertView alloc] initWithTitle:nil
+                                                      message:strPrompt delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
+    [NSTimer scheduledTimerWithTimeInterval:1
+                                 target:self
+                               selector:@selector(timerFireMethod:)
+                               userInfo:promptAlert
+                                repeats:NO];
+    [promptAlert show];
+}
 
 @end

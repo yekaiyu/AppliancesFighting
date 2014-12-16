@@ -59,6 +59,8 @@ static DeviceManage * cDeviceManage = nil;
 
 -(void)ParseDevice:(NSDictionary*) Devices
 {
+    [_Devices removeAllObjects];
+//    NSDictionary * dictionary = responseObject;
     
 }
 -(NSMutableArray*)GetDevices
