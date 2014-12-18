@@ -15,7 +15,7 @@
 
 -(void) Login:(NSString *) Username andPassword:(NSString *)Password;
 -(void) CreateAccount:(NSDictionary *) Account;
--(NSDictionary*) GetDevice;
+-(NSArray*) GetDevice;
 -(BOOL) isLogin;
 @end
 

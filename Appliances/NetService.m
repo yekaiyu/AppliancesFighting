@@ -19,7 +19,7 @@ static NetService * cNetService = nil;
 @property(nonatomic,copy)   NSMutableString * UsernameID;
 @property(nonatomic,copy)   NSMutableString * PasswordID;
 @property(nonatomic,copy)   NSMutableString * UserID;
-@property(nonatomic,copy)   NSDictionary * Devices;
+@property(nonatomic,copy)   NSMutableArray * Devices;
 @end
 
 @implementation NetService
@@ -67,7 +67,7 @@ static NetService * cNetService = nil;
 -(void) CreateAccount:(NSDictionary *) Account
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
     [manager POST:cStrCreateAccount parameters:Account success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSNotification * note = [[NSNotification alloc] initWithName:CreateAccountuccess object:nil userInfo:nil];
@@ -78,21 +78,39 @@ static NetService * cNetService = nil;
     }];
 }
 
--(NSDictionary*) GetDevice
+-(NSArray*) GetDevice
 {
+    dispatch_group_t group = dispatch_group_create();
     _Devices = nil;
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
+    dispatch_queue_t queueReserve = manager.completionQueue;
+    
     [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:_UsernameID password:_PasswordID];
     NSString * cStrGetDev = [[NSString alloc] initWithFormat:cStrGetDevices, _UserID];
-    AFHTTPRequestOperation * Operation = [manager POST:cStrGetDev parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        _Devices = responseObject;
+
+    [manager setCompletionQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
+    dispatch_group_enter(group);
+    AFHTTPRequestOperation * Operation = [manager GET:cStrGetDev parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if ([responseObject isKindOfClass:[NSArray class]]) {
+            self.Devices = responseObject;
+        }
+        else{
+            
+        }
+        dispatch_group_leave(group);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
-    }];
-    [Operation waitUntilFinished];
+        NSString * errorInfo = [operation responseString];
+        NSDictionary * errorInfo1 = [[operation request] allHTTPHeaderFields];
+        NSDictionary * errorInfo2 = [[operation response] allHeaderFields ];
+        dispatch_group_leave(group);
+    }]; 
 
+    [Operation waitUntilFinished];
+    [manager setCompletionQueue:queueReserve];
+    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
     return _Devices;
 }
 

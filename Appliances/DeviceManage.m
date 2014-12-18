@@ -42,19 +42,18 @@ static DeviceManage * cDeviceManage = nil;
             return TRUE;
         }
         else{
-            NSDictionary * Devices = [[NetService sharedInstance] GetDevice];
+            NSArray * Devices = [[NetService sharedInstance] GetDevice];
             if (Devices == nil) {
                 return FALSE;
             }else
             {
-                [self ParseDevice:Devices];
-                _bGetDevice = TRUE;
+                _bGetDevice = Devices;
                 return TRUE;
             }
         }
         
     }
-    return _bGetDevice;
+    return FALSE;
 }
 
 -(void)ParseDevice:(NSDictionary*) Devices
